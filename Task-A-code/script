@@ -1,0 +1,51 @@
+./waf --run "scratch/taskA --file="simulation_output/taskA1/nodes/f1" --n=10 "
+./waf --run "scratch/taskA --file="simulation_output/taskA1/nodes/f2" --n=20 "
+./waf --run "scratch/taskA --file="simulation_output/taskA1/nodes/f3" --n=30 "
+./waf --run "scratch/taskA --file="simulation_output/taskA1/nodes/f4" --n=40 "
+./waf --run "scratch/taskA --file="simulation_output/taskA1/nodes/f5" --n=50 "
+
+./waf --run "scratch/taskA --file="simulation_output/taskA1/flow/f1" --flow=5 --n=26"
+./waf --run "scratch/taskA --file="simulation_output/taskA1/flow/f2" --flow=10 --n=26 "
+./waf --run "scratch/taskA --file="simulation_output/taskA1/flow/f3" --flow=15 --n=26"
+./waf --run "scratch/taskA --file="simulation_output/taskA1/flow/f4" --flow=20 --n=26"
+./waf --run "scratch/taskA --file="simulation_output/taskA1/flow/f5" --flow=25 --n=26 "
+
+./waf --run "scratch/taskA --file="simulation_output/taskA1/pkt/f1" --p=100 "
+./waf --run "scratch/taskA --file="simulation_output/taskA1/pkt/f2" --p=200 "
+./waf --run "scratch/taskA --file="simulation_output/taskA1/pkt/f3" --p=300 "
+./waf --run "scratch/taskA --file="simulation_output/taskA1/pkt/f4" --p=400 "
+./waf --run "scratch/taskA --file="simulation_output/taskA1/pkt/f5" --p=500 "
+
+./waf --run "scratch/taskA --file="simulation_output/taskA1/velocity/f1" --v=5 "
+./waf --run "scratch/taskA --file="simulation_output/taskA1/velocity/f2" --v=10 "
+./waf --run "scratch/taskA --file="simulation_output/taskA1/velocity/f3" --v=15"
+./waf --run "scratch/taskA --file="simulation_output/taskA1/velocity/f4" --v=20 "
+./waf --run "scratch/taskA --file="simulation_output/taskA1/velocity/f5" --v=25 "
+
+./waf --run "scratch/taskA2 --file="simulation_output/taskA2/tx/f1" --r=1 "
+./waf --run "scratch/taskA2 --file="simulation_output/taskA2/tx/f2" --r=2 "
+./waf --run "scratch/taskA2 --file="simulation_output/taskA2/tx/f3" --r=3 "
+./waf --run "scratch/taskA2 --file="simulation_output/taskA2/tx/f4" --r=4 "
+./waf --run "scratch/taskA2 --file="simulation_output/taskA2/tx/f5" --r=5 "
+
+./waf --run "scratch/taskA2 --file="simulation_output/taskA2/nodes/f1" --n=20 "
+./waf --run "scratch/taskA2 --file="simulation_output/taskA2/nodes/f2" --n=40 "
+./waf --run "scratch/taskA2 --file="simulation_output/taskA2/nodes/f3" --n=60 "
+./waf --run "scratch/taskA2 --file="simulation_output/taskA2/nodes/f4" --n=80 "
+./waf --run "scratch/taskA2 --file="simulation_output/taskA2/nodes/f5" --n=100 "
+
+./waf --run "scratch/taskA2 --file="simulation_output/taskA2/flow/f1" --flow=5 "
+./waf --run "scratch/taskA2 --file="simulation_output/taskA2/flow/f2" --flow=10 "
+./waf --run "scratch/taskA2 --file="simulation_output/taskA2/flow/f3" --flow=15 "
+./waf --run "scratch/taskA2 --file="simulation_output/taskA2/flow/f4" --flow=20 "
+./waf --run "scratch/taskA2 --file="simulation_output/taskA2/flow/f5" --flow=25 "
+
+./waf --run "scratch/taskA2 --file="simulation_output/taskA2/pkt/f1" --p=100 "
+./waf --run "scratch/taskA2 --file="simulation_output/taskA2/pkt/f2" --p=200 "
+./waf --run "scratch/taskA2 --file="simulation_output/taskA2/pkt/f3" --p=300 "
+./waf --run "scratch/taskA2 --file="simulation_output/taskA2/pkt/f4" --p=400 "
+./waf --run "scratch/taskA2 --file="simulation_output/taskA2/pkt/f5" --p=500 "
+
+
+
+

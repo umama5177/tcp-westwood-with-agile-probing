@@ -1,0 +1,21 @@
+#!/bin/bash
+#./waf --run "scratch/wifi-simulation --cf="simulation_output/algo/tcpReno.cwnd" --tf="simulation_output/algo/tcpReno.t" --n=10 --flow=5  "
+./waf --run "scratch/wifi-simulation --cf="simulation_output/algo/tcpwA.cwnd" --tf="simulation_output/algo/tcpwA.t" --tcpVariant="TcpWestwoodWithAgileProbing" "
+
+./waf --run "scratch/taskA --file="simulation_output/algo/nodes/f1" --n=10 --tcpVariant="TcpWestwoodWithAgileProbing""
+./waf --run "scratch/taskA --file="simulation_output/algo/nodes/f2" --n=20 --tcpVariant="TcpWestwoodWithAgileProbing""
+./waf --run "scratch/taskA --file="simulation_output/algo/nodes/f3" --n=30 --tcpVariant="TcpWestwoodWithAgileProbing""
+./waf --run "scratch/taskA --file="simulation_output/algo/nodes/f4" --n=40 --tcpVariant="TcpWestwoodWithAgileProbing""
+./waf --run "scratch/taskA --file="simulation_output/algo/nodes/f5" --n=50 --tcpVariant="TcpWestwoodWithAgileProbing""
+
+./waf --run "scratch/taskA --file="simulation_output/algo/flow/f1" --flow=5 --n=26 --tcpVariant="TcpWestwoodWithAgileProbing""
+./waf --run "scratch/taskA --file="simulation_output/algo/flow/f2" --flow=10 --n=26 --tcpVariant="TcpWestwoodWithAgileProbing""
+./waf --run "scratch/taskA --file="simulation_output/algo/flow/f3" --flow=15 --n=26 --tcpVariant="TcpWestwoodWithAgileProbing""
+./waf --run "scratch/taskA --file="simulation_output/algo/flow/f4" --flow=20 --n=26 --tcpVariant="TcpWestwoodWithAgileProbing""
+./waf --run "scratch/taskA --file="simulation_output/algo/flow/f5" --flow=25 --n=26 --tcpVariant="TcpWestwoodWithAgileProbing""
+
+./waf --run "scratch/taskA --file="simulation_output/algo/pkt/f1" --p=100 --tcpVariant="TcpWestwoodWithAgileProbing""
+./waf --run "scratch/taskA --file="simulation_output/algo/pkt/f2" --p=200 --tcpVariant="TcpWestwoodWithAgileProbing""
+./waf --run "scratch/taskA --file="simulation_output/algo/pkt/f3" --p=300 --tcpVariant="TcpWestwoodWithAgileProbing""
+./waf --run "scratch/taskA --file="simulation_output/algo/pkt/f4" --p=400 --tcpVariant="TcpWestwoodWithAgileProbing""
+./waf --run "scratch/taskA --file="simulation_output/algo/pkt/f5" --p=500 --tcpVariant="TcpWestwoodWithAgileProbing""

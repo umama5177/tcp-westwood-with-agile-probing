@@ -1,0 +1,39 @@
+#!/bin/bash
+file1="tcpReno.cwnd"
+file2="tcpwA.cwnd"
+newfile="cwnd"
+n=1
+if [ -f $newfile ];then
+	rm $newfile
+fi
+touch $newfile
+while read l;do
+	echo $l >> $newfile
+	str=$(sed -n "$n"p $file2)
+	str="$l $str" 
+	sed -i "$n c\\$str" $newfile
+	n=$((n+1))
+done < $file1
+
+file1="tcpReno.t"
+file2="tcpwA.t"
+newfile="throughput"
+n=1
+if [ -f $newfile ];then
+	rm $newfile
+fi
+touch $newfile
+while read l;do
+	#read -ra line <<< $l
+	#len=${#line[*]}
+	#append=${line[$len-1]}
+	#time=${line[0]}
+	echo $l >> $newfile
+	str=$(sed -n "$n"p $file2) 
+	str="$l $str" 
+	sed -i "$n c\\$str" $newfile
+	n=$((n+1))
+done < $file1
+
+
+

@@ -1,0 +1,82 @@
+#!/bin/bash
+file1="delay.txt"
+file2="delay1.txt"
+newfile="comdelay"
+n=1
+if [ -f $newfile ];then
+	rm $newfile
+fi
+touch $newfile
+while read l;do
+	echo $l >> $newfile
+	str=$(sed -n "$n"p $file2)
+	str="$l $str" 
+	sed -i "$n c\\$str" $newfile
+	n=$((n+1))
+done < $file1
+
+file1="delivery.txt"
+file2="delivery1.txt"
+newfile="comdelivery"
+n=1
+if [ -f $newfile ];then
+	rm $newfile
+fi
+touch $newfile
+while read l;do
+	#read -ra line <<< $l
+	#len=${#line[*]}
+	#append=${line[$len-1]}
+	#time=${line[0]}
+	echo $l >> $newfile
+	str=$(sed -n "$n"p $file2) 
+	str="$l $str" 
+	sed -i "$n c\\$str" $newfile
+	n=$((n+1))
+done < $file1
+
+file1="throughput.txt"
+file2="throughput1.txt"
+newfile="comthroughput"
+n=1
+if [ -f $newfile ];then
+	rm $newfile
+fi
+touch $newfile
+while read l;do
+	#read -ra line <<< $l
+	#len=${#line[*]}
+	#append=${line[$len-1]}
+	#time=${line[0]}
+	echo $l >> $newfile
+	str=$(sed -n "$n"p $file2) 
+	str="$l $str" 
+	sed -i "$n c\\$str" $newfile
+	n=$((n+1))
+done < $file1
+
+file1="drop.txt"
+file2="drop1.txt"
+newfile="comdrop"
+n=1
+if [ -f $newfile ];then
+	rm $newfile
+fi
+touch $newfile
+while read l;do
+	#read -ra line <<< $l
+	#len=${#line[*]}
+	#append=${line[$len-1]}
+	#time=${line[0]}
+	echo $l >> $newfile
+	str=$(sed -n "$n"p $file2) 
+	str="$l $str" 
+	sed -i "$n c\\$str" $newfile
+	n=$((n+1))
+done < $file1
+
+
+gnuplot comdelVsFlow.plt
+gnuplot comdelayVsFlow.plt
+gnuplot comdropVsFlow.plt
+gnuplot comThrVsFlow.plt

@@ -1,0 +1,53 @@
+#!/bin/bash
+start=("nodes" "flow" "pkt" "velocity" "tx")
+initial=(20 10 100 5 20)
+#find the variable parameter
+curdir=$(pwd)
+IFS="/"
+read -ra in <<< $curdir
+l=${#in[*]}
+input=${in[$l-1]}
+idx=0
+
+for i in ${!start[*]};do
+	if [ ${input} = ${start[$i]} ];then
+		idx=$i
+		break
+	fi
+done
+
+#delivery
+
+keywords=("delivery" "drop" "throughput" "delay")
+for ((j=0;j<4;j++));do
+	keyword=${keywords[$j]}
+	echo $keyword
+	outfile=$keyword$".txt"
+	if [ -f $outfile ];then
+		rm $outfile
+	fi
+	mul=1
+	init=${initial[$idx]}
+	increase=$init
+	f="f"	
+	for (( i=1 ;i<=5;i++));do
+		filename="$f$mul"
+		line=$(grep -i $keyword $filename)
+		IFS=" "
+		read -ra out <<< $line
+		len=${#out[*]}
+		value=${out[$len-1]}
+		echo "${init} ${value}" >> $outfile
+		mul=$((mul+1))
+		init=$((init +increase))
+	
+	done
+done
+
+gnuplot drop.plt
+gnuplot delivery.plt
+gnuplot throughput.plt
+gnuplot delay.plt
+
+
+
